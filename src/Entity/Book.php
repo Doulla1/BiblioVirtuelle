@@ -40,7 +40,7 @@ class Book
 
     #[ORM\ManyToOne(inversedBy: 'books')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?editor $editor = null;
+    private ?Editor $editor = null;
 
     /**
      * @var Collection<int, Author>
@@ -149,12 +149,12 @@ class Book
         return $this;
     }
 
-    public function getEditor(): ?editor
+    public function getEditor(): ?Editor
     {
         return $this->editor;
     }
 
-    public function setEditor(?editor $editor): static
+    public function setEditor(?Editor $editor): static
     {
         $this->editor = $editor;
 
