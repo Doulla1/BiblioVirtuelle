@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+    {% block stylesheets %}
+    {% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    {% block javascripts %}
+        {% block importmap %}{{ importmap('app') }}{% endblock %}
+    {% endblock %}
+</head>
+<body id="page-top">
+<nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container px-4">
+        <a class="navbar-brand" href="#page-top">{{ 'Start Bootstrap' | trans }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="{{ 'Toggle navigation' | trans }}">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarResponsive" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">{{ 'About' | trans }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">{{ 'Services' | trans }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">{{ 'Contact' | trans }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block body %}
+{% endblock %}
+
+<footer class="py-5 bg-dark">
+    <div class="container px-4">
+        <p class="m-0 text-center text-white">
+            {{ 'Copyright' | trans }} &copy; {{ 'Your Website' | trans }} {{ "now" | date('Y') }}
+        </p>
+    </div>
+</footer>
+</body>
+
 </html>
