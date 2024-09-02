@@ -20,7 +20,7 @@ class AuthorController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_admin_author_new')]
+    #[Route('/new', name: 'app_admin_author_new', methods:['GET', 'POST'])]
     public function new(Request $request): Response{
         $author = new Author();
         $form = $this->createForm(AuthorType::class, $author);
